@@ -1,0 +1,5 @@
+Route::get('/songs', function () {
+    $song = new Song();
+    $song->setTitle('With You');
+    return view('songs', [ 'song' => $song ]);
+});
