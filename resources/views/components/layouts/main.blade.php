@@ -7,56 +7,50 @@
   <title>Your Playlist App</title>
 </head>
 <body>
-  <div class="container">
+
     <header>
-      <h1>Playlist Name</h1>
-      <div class="header-buttons">
-        <a href="#" class="button">Edit Playlist</a>
-        <a href="#" class="button">New Playlist</a>
-      </div>
+        <h1>Playlist Name</h1>
+        <div>
+            <a href="#" class="link-button" id="editPlaylistButton">Edit Playlist</a>
+            <a href="#" class="link-button" id="newPlaylistButton">New Playlist</a>
+        </div>
     </header>
-    <aside>
-      <h2>Saved Playlists</h2>
-      <!-- Your playlist list goes here -->
-    </aside>
-    <main>
-  <table>
-    <thead>
-      <tr>
-        <th>Serial No</th>
-        <th>Song Title</th>
-        <th>Artist Name</th>
-        <th>Album Name</th>
-        <th>Duration</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Song 1</td>
-        <td>Artist 1</td>
-        <td>Album 1</td>
-        <td>3:30</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Song 2</td>
-        <td>Artist 2</td>
-        <td>Album 2</td>
-        <td>4:15</td>
-      </tr>
-      <!-- Add more rows as needed -->
-    </tbody>
-  </table>
-</main>
+
+    <nav>
+        <h2>Saved Playlists</h2>
+        <ul>
+            <li><a href="#">Playlist 1</a></li>
+            <li><a href="#">Playlist 2</a></li>
+            <li><a href="#">Playlist 3</a></li>
+            <!-- Add more playlists as needed -->
+        </ul>
+    </nav>
+
+    <main id="mainContent">
+        <!-- Default content (song list) -->
+        @yield('content')   
+
+        <!-- Form for creating a new playlist (initially hidden) -->
+        <form id="playlistForm" style="display: none;">
+            <label for="playlist-name">Playlist Name:</label>
+            <input type="text" id="playlist-name" name="playlist-name" required>
+
+            <label for="song-selection">Select Song:</label>
+            <select id="song-selection" name="song-selection" required>
+                <option value="" disabled selected>Select a song</option>
+                <option value="song1">Song Title 1 - Artist 1</option>
+                <option value="song2">Song Title 2 - Artist 2</option>
+                <!-- Add more song options as needed -->
+            </select>
+
+            <a href="#" class="link-button" id="savePlaylistButton">Save</a>
+        </form>
+    </main>
 
     <footer>
-      <p>&copy; 2023 Your Playlist App</p>
-      <nav>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
+        <p>&copy; 2023 Playlist App | <a href="#">About</a> | <a href="#">Terms</a></p>
     </footer>
-  </div>
+
+ 
 </body>
 </html>
