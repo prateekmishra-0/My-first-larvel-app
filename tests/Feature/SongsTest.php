@@ -11,10 +11,17 @@ class SongsTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function testSongsStaticNotFound(): void
     {
-        $response = $this->get('/songs');
+        $response = $this->get('/songs_static');
 
-        $response->assertStatus(200);
+        $response->assertStatus(200); 
+    }
+
+    public function testSongsSpotifyNotFound(): void
+    {
+        $response = $this->get('/songs_spotify');
+
+        $response->assertStatus(200); 
     }
 }
