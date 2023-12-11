@@ -22,4 +22,6 @@ Route::get('/songs_static', function () {
     return view('songs', [ 'songs' => Song::all() ] );
 });
 
-
+Route::get('/playlist/{playlistId}', function (string $playlistId) {
+  return view('playlist', ['songs' => Song::all(), 'playlistId' => $playlistId ]);
+})->where('playlistId', '[0-9]+');
